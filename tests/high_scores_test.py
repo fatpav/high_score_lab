@@ -35,11 +35,11 @@ class HighScoresTest(unittest.TestCase):
         self.assertEqual([925, 925, 811], personal_top_three(self.scores_2))
     
     # Test top three when there are less than three
-    @unittest.skip("delete this line to run the test")
+    
     def test_top_three_when_there_are_less_than_three_scores(self):
-        self.assertEqual([925, 811], top_three(self.scores_3))
+        self.assertEqual([925, 811], personal_top_three(self.scores_3))
     
     # Test top three when there is only one
-    @unittest.skip("delete this line to run the test")
+    
     def test_for_top_three_with_only_one_score(self):
-        self.assertEqual([1000], top_three(self.scores_4))
+        self.assertEqual([1000], personal_top_three(self.scores_4))
