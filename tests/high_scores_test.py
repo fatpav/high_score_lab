@@ -22,7 +22,7 @@ class HighScoresTest(unittest.TestCase):
     def test_for_the_highest_score_on_the_list__901(self):
         self.assertEqual(901, personal_best(self.scores))
     # Test top three from list of scores
-    @unittest.skip("delete this line to run the test")
+    
     def test_to_find_the_top_3_scores__901__811__765(self):
         self.assertEqual([901,811,765], personal_top_three(self.scores))
     # Test ordered from highest tp lowest
