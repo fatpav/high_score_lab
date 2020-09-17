@@ -1,6 +1,6 @@
 import unittest
 
-from src.high_scores import latest, personal_best, personal_top_three
+from src.high_scores import *
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v4.0.0
 
@@ -9,7 +9,7 @@ class HighScoresTest(unittest.TestCase):
 
     def setUp(self):   
         self.scores = [34, 54, 765, 234, 1, 32, 764, 98, 901, 378, 811]
-        self.scores_2 = [925, 925, 811, 734, 666]
+        self.scores_2 = [925, 666, 811, 734, 925]
         self.scores_3 = [925, 811]
         self.scores_4 = [1000]
     # Tests
@@ -26,18 +26,20 @@ class HighScoresTest(unittest.TestCase):
     def test_to_find_the_top_3_scores__901__811__765(self):
         self.assertEqual([901,811,765], personal_top_three(self.scores))
     # Test ordered from highest tp lowest
-    @unittest.skip("delete this line to run the test")
+    
     def test_to_order_scores_from_highest_to_lowest(self):
-        self.assertEqual([901, 811, 765, 764, 378, 234, 98,54,34,32, 1], high_to_low(self.scores))
+        self.assertEqual([901, 811, 765, 764, 378, 234, 98,54,34,32, 1], highest_to_lowest(self.scores))
     # Test top three when there is a tie
-    @unittest.skip("delete this line to run the test")
+    
     def test_top_three_with_tied_scores(self):
-        self.assertEqual(925, 925, 811, top_three(self.scores_2))
+        self.assertEqual([925, 925, 811], personal_top_three(self.scores_2))
+    
     # Test top three when there are less than three
     @unittest.skip("delete this line to run the test")
     def test_top_three_when_there_are_less_than_three_scores(self):
-        self.assertEqual(925, 811, top_three(self.scores_3))
+        self.assertEqual([925, 811], top_three(self.scores_3))
+    
     # Test top three when there is only one
     @unittest.skip("delete this line to run the test")
     def test_for_top_three_with_only_one_score(self):
-        self.assertEqual(1000, top_three(self.scores_4))
+        self.assertEqual([1000], top_three(self.scores_4))

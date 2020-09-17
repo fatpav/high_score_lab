@@ -13,3 +13,9 @@ def personal_top_three(scores):
     return scores[:3]
 
 
+def highest_to_lowest(scores):
+    scores.sort(reverse = True)
+    return scores
+
+
+
